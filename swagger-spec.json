@@ -1,0 +1,1239 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "HealthController_testApp",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Health"
+        ]
+      }
+    },
+    "/users/all": {
+      "get": {
+        "operationId": "UsersController_getAllUsers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/register": {
+      "post": {
+        "operationId": "UsersController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/verify-email": {
+      "post": {
+        "operationId": "UsersController_verifyEmail",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyEmailDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/resend-verification": {
+      "post": {
+        "operationId": "UsersController_resendVerificationEmail",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResendEmailVerificationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/refresh-token": {
+      "post": {
+        "operationId": "UsersController_refreshToken",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/login": {
+      "post": {
+        "operationId": "UsersController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/change-password": {
+      "put": {
+        "operationId": "UsersController_changePassword",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/request-password-reset": {
+      "post": {
+        "operationId": "UsersController_requestPasswordReset",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestResetPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/reset-password": {
+      "post": {
+        "operationId": "UsersController_resetPassword",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/profile": {
+      "get": {
+        "operationId": "UsersController_getProfile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      },
+      "patch": {
+        "operationId": "UsersController_updateProfile",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProfileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/logout": {
+      "post": {
+        "operationId": "UsersController_logout",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/{email}": {
+      "delete": {
+        "operationId": "UsersController_deleteUserByEmail",
+        "parameters": [
+          {
+            "name": "email",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/admin-dashboard": {
+      "get": {
+        "operationId": "UsersController_getAdminDashboard",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/flight-management": {
+      "get": {
+        "operationId": "UsersController_manageFlights",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/users/roles": {
+      "patch": {
+        "operationId": "UsersController_updateRoles",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRolesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/email-test/qr-code": {
+      "get": {
+        "operationId": "EmailTestController_testQRCode",
+        "parameters": [
+          {
+            "name": "bookingRef",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "EmailTest"
+        ]
+      }
+    },
+    "/email-test/qr-code-terminal": {
+      "get": {
+        "operationId": "EmailTestController_testQRCodeTerminal",
+        "parameters": [
+          {
+            "name": "bookingRef",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "EmailTest"
+        ]
+      }
+    },
+    "/email-test/email-preview": {
+      "get": {
+        "operationId": "EmailTestController_previewEmail",
+        "parameters": [
+          {
+            "name": "bookingRef",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "EmailTest"
+        ]
+      }
+    },
+    "/flights/search/available": {
+      "get": {
+        "operationId": "FlightController_searchAvailableFlights",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Flights"
+        ]
+      }
+    },
+    "/flights/{flightId}/seatmap": {
+      "get": {
+        "operationId": "FlightController_getSeatMap",
+        "parameters": [
+          {
+            "name": "flightId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Flights"
+        ]
+      }
+    },
+    "/booking/book-flight": {
+      "post": {
+        "operationId": "BookingController_bookFlight",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Booking"
+        ]
+      }
+    },
+    "/booking/my-bookings": {
+      "get": {
+        "operationId": "BookingController_getMyBookings",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Booking"
+        ]
+      }
+    },
+    "/booking/{id}": {
+      "get": {
+        "operationId": "BookingController_getBookingDetails",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Booking"
+        ]
+      }
+    },
+    "/booking/calculate-fee": {
+      "get": {
+        "operationId": "BookingController_calculateApplicationFee",
+        "parameters": [
+          {
+            "name": "basePrice",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Booking"
+        ]
+      }
+    },
+    "/payment/create-payment-intent": {
+      "post": {
+        "operationId": "PaymentController_createPaymentIntent",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentIntentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/payment/confirm-payment": {
+      "post": {
+        "operationId": "PaymentController_confirmPayment",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/payment/status/{bookingId}": {
+      "get": {
+        "operationId": "PaymentController_getPaymentStatus",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/payment/webhook": {
+      "post": {
+        "operationId": "PaymentController_handleWebhook",
+        "parameters": [
+          {
+            "name": "stripe-signature",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-paymob-signature",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-provider",
+            "required": true,
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/payment/test-card-payment": {
+      "post": {
+        "operationId": "PaymentController_testCardPayment",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/payment/paymob/create-payment-key": {
+      "post": {
+        "operationId": "PaymentController_createPaymobPaymentKey",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymobPaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Payment"
+        ]
+      }
+    },
+    "/notification": {
+      "get": {
+        "operationId": "NotificationController_getNotifications",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/notification/count": {
+      "get": {
+        "operationId": "NotificationController_getNotificationCount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Notification"
+        ]
+      }
+    },
+    "/favorites": {
+      "get": {
+        "operationId": "FavoritesController_getFavorites",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    },
+    "/favorites/count": {
+      "get": {
+        "operationId": "FavoritesController_getFavoritesCount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    },
+    "/favorites/add": {
+      "post": {
+        "operationId": "FavoritesController_addToFavorites",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FavoritDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    },
+    "/favorites/remove": {
+      "post": {
+        "operationId": "FavoritesController_removeFromFavorites",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FavoritDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    },
+    "/favorites/remove-all": {
+      "post": {
+        "operationId": "FavoritesController_removeAllFavorites",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    },
+    "/favorites/is-favorited": {
+      "post": {
+        "operationId": "FavoritesController_isFlightFavorited",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FavoritDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Favorites"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Smart Airport API",
+    "description": "API documentation for the Smart Airport application",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateUserDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@example.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "Passsssword12@@"
+          },
+          "firstName": {
+            "type": "string",
+            "example": "Ahmed"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "MMM"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "example": "+201234567890"
+          },
+          "country": {
+            "type": "string",
+            "example": "Egypt"
+          }
+        },
+        "required": [
+          "email",
+          "password",
+          "firstName",
+          "lastName",
+          "country"
+        ]
+      },
+      "VerifyEmailDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "test@example.com",
+            "description": "User email address"
+          },
+          "code": {
+            "type": "string",
+            "example": "A1B2C3",
+            "description": "Verification code"
+          }
+        },
+        "required": [
+          "email",
+          "code"
+        ]
+      },
+      "ResendEmailVerificationDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user1@example.com",
+            "description": "Email of the user to resend verification"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      },
+      "RefreshTokenDto": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "example": "your-refresh-token-here",
+            "description": "Refresh token to obtain a new access token"
+          }
+        },
+        "required": [
+          "refreshToken"
+        ]
+      },
+      "LoginUserDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "description": "User email"
+          },
+          "password": {
+            "type": "string",
+            "example": "Password123!",
+            "description": "User password"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "ChangePasswordDto": {
+        "type": "object",
+        "properties": {
+          "oldPassword": {
+            "type": "string",
+            "example": "OldPasssssword12@@"
+          },
+          "newPassword": {
+            "type": "string",
+            "example": "NewPasssssword12@@"
+          }
+        },
+        "required": [
+          "oldPassword",
+          "newPassword"
+        ]
+      },
+      "RequestResetPasswordDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user1@example.com",
+            "description": "Email of the user to request password reset"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      },
+      "ResetPasswordDto": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "ABC12"
+          },
+          "newPassword": {
+            "type": "string",
+            "example": "NewPasssssword12@@"
+          }
+        },
+        "required": [
+          "code",
+          "newPassword"
+        ]
+      },
+      "UpdateProfileDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateUserRolesDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "TravellerInfoDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "Ahmed",
+            "description": "Traveler first name"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Mohamed",
+            "description": "Traveler last name"
+          },
+          "birthDate": {
+            "type": "string",
+            "example": "2000-02-01",
+            "description": "Traveler birth date in YYYY-MM-DD format"
+          },
+          "travelerType": {
+            "type": "string",
+            "enum": [
+              "adult",
+              "child",
+              "infant"
+            ],
+            "example": "adult",
+            "description": "Type of traveler"
+          },
+          "nationality": {
+            "type": "string",
+            "example": "Egyptian",
+            "description": "Traveler nationality"
+          },
+          "passportNumber": {
+            "type": "string",
+            "example": "A12345678",
+            "description": "Passport number"
+          },
+          "issuingCountry": {
+            "type": "string",
+            "example": "Egypt",
+            "description": "Passport issuing country"
+          },
+          "expiryDate": {
+            "type": "string",
+            "example": "2030-02-01",
+            "description": "Passport expiry date in YYYY-MM-DD format"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "birthDate",
+          "travelerType",
+          "nationality",
+          "passportNumber",
+          "issuingCountry",
+          "expiryDate"
+        ]
+      },
+      "ContactDetailsDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "john.doe@example.com",
+            "description": "Contact email for booking notifications"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+201234567890",
+            "description": "Contact phone number in international format"
+          }
+        },
+        "required": [
+          "email",
+          "phone"
+        ]
+      },
+      "CreateBookingDto": {
+        "type": "object",
+        "properties": {
+          "flightID": {
+            "type": "string",
+            "example": "FL123456",
+            "description": "Unique flight identifier"
+          },
+          "originAirportCode": {
+            "type": "string",
+            "example": "LGA",
+            "description": "Origin airport IATA code"
+          },
+          "destinationAirportCode": {
+            "type": "string",
+            "example": "DAD",
+            "description": "Destination airport IATA code"
+          },
+          "originCIty": {
+            "type": "string",
+            "example": "New York",
+            "description": "Origin city name"
+          },
+          "destinationCIty": {
+            "type": "string",
+            "example": "Da Nang",
+            "description": "Destination city name"
+          },
+          "departureDate": {
+            "type": "string",
+            "example": "2024-08-28",
+            "description": "Departure date in YYYY-MM-DD format"
+          },
+          "arrivalDate": {
+            "type": "string",
+            "example": "2024-08-28",
+            "description": "Arrival date in YYYY-MM-DD format"
+          },
+          "selectedBaggageOption": {
+            "type": "object",
+            "example": {
+              "type": "checked",
+              "weight": "23kg",
+              "price": 50,
+              "currency": "USD"
+            },
+            "description": "Selected baggage option details"
+          },
+          "totalPrice": {
+            "type": "number",
+            "example": 1500,
+            "description": "Total price including all fees and taxes"
+          },
+          "currency": {
+            "type": "string",
+            "example": "USD",
+            "description": "Currency code (ISO 4217)"
+          },
+          "travellersInfo": {
+            "description": "Array of traveler information",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TravellerInfoDto"
+            }
+          },
+          "contactDetails": {
+            "description": "Contact details for booking notifications",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ContactDetailsDto"
+              }
+            ]
+          },
+          "bookingRef": {
+            "type": "string",
+            "example": "BK123456",
+            "description": "Booking reference (auto-generated if not provided)"
+          }
+        },
+        "required": [
+          "flightID",
+          "originAirportCode",
+          "destinationAirportCode",
+          "originCIty",
+          "destinationCIty",
+          "departureDate",
+          "arrivalDate",
+          "totalPrice",
+          "currency",
+          "travellersInfo",
+          "contactDetails"
+        ]
+      },
+      "CreatePaymentIntentDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "ConfirmPaymentDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreatePaymobPaymentDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "FavoritDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "ErrorResponseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false,
+            "description": "Indicates if the request was successful"
+          },
+          "error": {
+            "type": "string",
+            "example": "Bad Request",
+            "description": "Error type or title"
+          },
+          "message": {
+            "type": "string",
+            "example": "Validation failed",
+            "description": "A human-readable error message"
+          },
+          "statusCode": {
+            "type": "number",
+            "example": 400,
+            "description": "HTTP status code"
+          },
+          "timestamp": {
+            "type": "string",
+            "example": "2025-02-27T09:05:47.193Z",
+            "description": "Timestamp of the error"
+          },
+          "path": {
+            "type": "string",
+            "example": "/users/register",
+            "description": "Request path"
+          },
+          "errors": {
+            "type": "object",
+            "example": {
+              "email": "Invalid email format"
+            },
+            "description": "Validation errors (when applicable)"
+          }
+        },
+        "required": [
+          "success",
+          "message",
+          "statusCode"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "errors": {
+    "invalidDate": "تنسيق التاريخ غير صالح",
+    "departureBeforeArrival": "يجب أن يكون المغادرة قبل الوصول",
+    "seatsPositive": "يجب أن تكون المقاعد موجبة",
+    "pricePositive": "يجب أن يكون السعر موجبًا",
+    "flightExists": "رقم الرحلة موجود بالفعل",
+    "returnDateRequired": "تاريخ العودة مطلوب للرحلة ذهابًا وإيابًا",
+    "multiCityLegsRequired": "الرحلات متعددة المدن مطلوبة للرحلة متعددة المدن",
+    "flightNotFound": "الرحلة غير موجودة",
+    "notEnoughSeats": "لا توجد مقاعد كافية متاحة",
+    "seatInventoryChanged": "تغيرت جرد المقاعد، يرجى التحديث",
+    "bookingWindowClosed": "نافذة الحجز مغلقة",
+    "priceChanged": "تغير السعر - يرجى التحديث",
+    "amadeusFetchFailed": "حدث خطأ أثناء جلب الرحلات من خدمة Amadeus. يرجى المحاولة مرة أخرى لاحقًا. التفاصيل: {details}",
+    "missingRequiredFields": "الحقول المطلوبة مفقودة",
+    "tooManyPassengers": "الحد الأقصى {max} ركاب مسموح",
+    "tooManyInfants": "لا يمكن أن يتجاوز عدد الرضع عدد البالغين"
+  },
+  "baggage": {
+    "included": "{count} حقيبة مدفوعة",
+    "included_plural": "{count} حقائب مدفوعة"
+  },
+  "status": {
+    "Scheduled": "مجدول"
+  },
+  "response": {
+    "foundFlights": "تم العثور على {paginatedTotal} عروض رحلات متاحة (من إجمالي {total})"
+  },
+  "duration": {
+    "format": "{hours}س {minutes}د"
+  },
+  "email": {
+    "newFlightSearchSubject": "بحث جديد عن رحلة",
+    "newFlightSearchBody": "تم البحث عن رحلات ({tripType}) من {departureAirport} إلى {arrivalAirport} في {departureDate}"
+  }
+}

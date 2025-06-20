@@ -1,0 +1,26 @@
+admin
+ {
+  "email": "gtrealex7@gmail.com",
+  "password": "Password123!@"
+}
+
+user
+
+{
+   "email": "horej16140@ofular.com",
+  "password": "Password123!@"
+}
+
+
+{"email": "ukggxocilpqhkcynno@nespj.com",
+  "password": "Password123!@"
+  }
+
+
+
+
+
+
+vm pw 5432
+
+
