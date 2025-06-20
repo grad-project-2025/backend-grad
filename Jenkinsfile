@@ -16,13 +16,6 @@ pipeline {
             bun install
         '''
     }
-}
-       
-        stage('Install Dependencies') {
-            steps {
-                sh 'bun install'
-            }
-        }
 
         stage('Build') {
             steps {
