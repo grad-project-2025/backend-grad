@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        BUN_INSTALL = "${HOME}/.bun"
+        PATH = "${HOME}/.bun/bin:${PATH}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
