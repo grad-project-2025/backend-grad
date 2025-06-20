@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/grad-project-2025/backend-grad'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'bun install'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'bun run build'
             }
         }
 
